@@ -16,7 +16,7 @@ const menuData: Menu[] = [
   {
     id: 3,
     title: "Pasarme de plan curricular",
-    path: "/blog",
+    path: "/curriculum",
     newTab: false,
   },
   {

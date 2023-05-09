@@ -1,4 +1,3 @@
-import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -8,17 +7,17 @@ const Hero = () => {
         className="relative z-10 overflow-hidden pt-[120px] pb-16 md:pt-[150px] md:pb-[120px] xl:pt-[180px] xl:pb-[160px] 2xl:pt-[210px] 2xl:pb-[200px]"
       >
         <div className="container">
-          <div className="-mx-4 flex flex-wrap">
+          <div className="flex flex-wrap h-full">
             <div className="w-full px-4">
               <div
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                Free and Open-Source Next.js Template for Startup & SaaS
+                <h1 className="mb-12 text-2xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight md:text-4xl md:leading-tight">
+                  Propuesta para la actualización curricular plan 2100 Licenciatura Ingeniería en Computadores
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
-                Startup is free Next.js template for startups and SaaS business websites comes with all the essential pages, components, and sections you need to launch a complete business website, built-with Next 13.x and Tailwind CSS.
+                  El Tecnológico de Costa Rica en su misión de contribuir con la competitividad y desarrollo económico de Costa Rica, se ha comprometido con la propuesta de una oferta académica relevante y pertinente, que atienda a las necesidades de talento humano del sector socio productivo del país, como condición previa para el desarrollo económico. En virtud de lo anterior, el Área Académica Ingeniería en Computadores propone una actualización del plan de estudio, la cual satisface las necesidades vigentes en el mercado actual tanto nacional como internacional. Esta actualización responde a la revisión permanente y análisis crítico, considerando lo que ha ocurrido en su implementación durante los diez años de vigencia del plan actual, como también los cambios en las distintas fuentes que nutren el proceso de revisión.
                 </p>
               </div>
             </div>

@@ -1,13 +1,27 @@
-import { Course } from "@/types/curriculum";
+"use client";
 
-const SingleCourse = ({ course }: { course: Course }) => {
-    const { id, name, credits } = course;
+import { Course } from "@/types/curriculum";
+import { useState, useEffect } from "react";
+
+const SingleNewCourse = ({ course }: { course: Course }) => {
+    const { code, name, credits, equivalence } = course;
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const sessionStorage = window.sessionStorage;
+    
+    useEffect(() => {
+        if(sessionStorage.getItem(equivalence) == "on"){
+          setIsClicked(true);
+        }
+    }, []);
+    
     return (
-      <button className="block h-[200px] border-[1px] rounded-[10px] justify-center items-center">
+      <div className={`block w-full h-[200px] border-[1px] rounded-[10px] justify-center items-center ${ isClicked ? "bg-green-300 dark:bg-gray-500" : "" }`}>
         <div className="block w-full h-[140px]" data-wow-delay=".15s">
           <div className="flex">
             <h3 className="ml-2 mb-5 text-xl w-full h-auto text-center font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-              {id}
+              {code}
             </h3>
             <span className="mt-2 -mr-2 text-sm w-full h-auto text-center font-bold text-black dark:text-white">
               {credits} cr
@@ -19,8 +33,8 @@ const SingleCourse = ({ course }: { course: Course }) => {
             </span>
           </div>
         </div>
-      </button>
+      </div>
     );
   };
   
-  export default SingleCourse;
+  export default SingleNewCourse;
