@@ -1,15 +1,32 @@
 "use client";
 
 import { useState } from 'react';
+import SingleMessage from './SingleMessage';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setMessages([...messages, inputValue]);
+
+  const handleClick = () => {
+
+    setIsButtonDisabled(true);
+
+    const message = {
+      from: "user",
+      text: inputValue,
+    }
+
+    const response = {
+      from: "OpenAI",
+      text: "aqui va la respuesta",
+    }
+
+    setMessages([...messages, message, response]);
     setInputValue('');
+    setIsButtonDisabled(false);
+
   };
 
   return (
@@ -23,19 +40,27 @@ const Chat = () => {
               data-wow-delay=".15s
               "
             >
-              <h2 className="mb-5 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+              <h2 className="mb-2 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 Chat
               </h2>
+              <div className="mb-5 ml-3">
+                Disclaimer
+              </div>
               
               <div className="w-full h-[500px] overflow-y-auto resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp">
-                {messages.map((message, index) => (
-                  <div key={index} className="chat-message">
-                    <p className="text-gray-800">{message}</p>
-                  </div>
-                ))}
+                <div className="w-full flex-rows resize-none justify-center">
+                  {messages.map((message, index) => (
+                    <div
+                      key={index}
+                      className="w-auto mb-5"
+                    >
+                      <SingleMessage message={message} />
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="py-3 pl-3 chat-form flex items-center px=3">
+              <div className="py-3 pl-3 chat-form flex items-center px=3">
                 <input
                   type="text"
                   className="w-11/12 rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
@@ -43,12 +68,12 @@ const Chat = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                 />
-                <button type="submit" className="rounded-md bg-primary ml-4 py-2 px-3 mr-0 md:mr-4 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+                <button type="submit" className={`rounded-md bg-primary ml-4 py-2 px-3 mr-0 md:mr-4 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`} disabled={isButtonDisabled} onClick={handleClick}>
                   <svg width="30" height="30" viewBox="0 0 40 41" className="fill-current">
                     <path d="M 5 0 L 5 38 L 43 17 L 5 0 Z" />
                   </svg>
                 </button>
-              </form>
+              </div>
                 
             </div>
           </div>

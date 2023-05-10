@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section id="contact" className="overflow-hidden py-10 md:py-5 lg:py-10">
+    <section id="contact" className="overflow-hidden mb-[15vh]">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="justify-center w-full px-4 lg:w-7/12 xl:w-full">

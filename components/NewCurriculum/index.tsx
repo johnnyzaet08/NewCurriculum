@@ -21,7 +21,7 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Nuevo plan curricualr"
+          title="Nuevo plan curricular"
           paragraph="Acá podrás observar la nueva malla curricular, en la pestaña 'Pasarme de malla' podrás conocer cuál es tu estado actual respecto a la nueva malla curricular."
           center
           mb="80px"
