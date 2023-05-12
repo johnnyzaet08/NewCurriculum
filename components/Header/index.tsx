@@ -61,7 +61,7 @@ const Header = () => {
                   className="max-w-[80px] max-h-[60px] dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.png"
+                  src="/images/logo/logo-2.png"
                   alt="logo"
                   width={140}
                   height={30}

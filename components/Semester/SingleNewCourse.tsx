@@ -2,16 +2,15 @@
 
 import { Course } from "@/types/curriculum";
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 const SingleNewCourse = ({ course }: { course: Course }) => {
     const { code, name, credits, equivalence } = course;
 
     const [isClicked, setIsClicked] = useState(false);
 
-    const sessionStorage = window.sessionStorage;
-    
     useEffect(() => {
-        if(sessionStorage.getItem(equivalence) == "on"){
+        if(Cookies.get(equivalence) == "on"){
           setIsClicked(true);
         }
     }, []);

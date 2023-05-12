@@ -2,18 +2,18 @@
 
 import { Course } from "@/types/curriculum";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 const SingleOldCourse = ({ course }: { course: Course }) => {
-    const { id, code, name, credits } = course;
+    const { code, name, credits } = course;
     const [isClicked, setIsClicked] = useState(false);
-    const sessionStorage = window.sessionStorage;
 
     const handleButtonClick = () => {
       if(isClicked){
-        sessionStorage.removeItem(code);
+        Cookies.remove(code);
         setIsClicked(false);
       }else{
-        sessionStorage.setItem(code, 'on');
+        Cookies.set(code, 'on', { expires: 1});
         setIsClicked(true);
       }
     };

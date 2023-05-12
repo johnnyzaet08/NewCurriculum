@@ -21,6 +21,7 @@ const Contact = () => {
                 <a
                   href="https://aseic.github.io/representacion_estudiantil.html#junta-directiva"
                   target="_blank"
+                  rel="noreferrer"
                   className="mr-1 ml-1 underline inline-block text-base font-large text-body-color hover:text-primary"
                 >
                   asociación de estudiantes 

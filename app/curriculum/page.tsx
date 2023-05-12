@@ -1,21 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import oldCurriculumData from "@/components/Semester/oldCurriculumData";
 import newCurriculumData from "@/components/Semester/newCurriculumData";
 import SingleOldSemester from "@/components/Semester/SingleOldSemester";
 import SingleNewSemester from "@/components/Semester/SingleNewSemester";
+import Cookies from "js-cookie";
 
 const curriculum = () => {
 
   const [showSection, setShowSection] = useState(true);
-  const sessionStorage = window.sessionStorage;
 
-  window.addEventListener('beforeunload', function() {
-    sessionStorage.clear();
-  });
+  useEffect(() => {
+    for(let i = 0; i < oldCurriculumData.length; i++){
+      for(let j = 0; j < oldCurriculumData[i].courses.length; j++){
+        if(Cookies.get(oldCurriculumData[i].courses[j].code) == "on"){
+          Cookies.remove(oldCurriculumData[i].courses[j].code);
+        }
+      }
+    }
+    handleClick();
+  }, []);
 
   function handleClick() {
     setShowSection(false);
