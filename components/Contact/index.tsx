@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section id="contact" className="overflow-hidden py-10 md:py-5 lg:py-10">
+    <section id="contact" className="overflow-hidden mb-[15vh]">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="justify-center w-full px-4 lg:w-7/12 xl:w-full">
@@ -21,6 +21,7 @@ const Contact = () => {
                 <a
                   href="https://aseic.github.io/representacion_estudiantil.html#junta-directiva"
                   target="_blank"
+                  rel="noreferrer"
                   className="mr-1 ml-1 underline inline-block text-base font-large text-body-color hover:text-primary"
                 >
                   asociación de estudiantes 

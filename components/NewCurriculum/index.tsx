@@ -21,7 +21,7 @@ const Video = () => {
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Nuevo plan curricualr"
+          title="Nuevo plan curricular"
           paragraph="Acá podrás observar la nueva malla curricular, en la pestaña 'Pasarme de malla' podrás conocer cuál es tu estado actual respecto a la nueva malla curricular."
           center
           mb="80px"
@@ -35,12 +35,13 @@ const Video = () => {
             >
               
               <div className="relative aspect-[77/40] items-center justify-center">
-                <div className="absolute top-0 right-0 flex h-full w-full items-center justify-center">
+                <div className="relative top-0 right-0 flex h-full w-full items-center justify-center">
                   <button
                     onClick={() => handleOpenModal()}
-                    className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
+                    className="relative h-full w-full items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
                   >
-                    <Image src={imageUrl} alt="Modal Image" fill />
+                    <Image src={imageUrl} alt="Modal Image" fill 
+                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
                   </button>
                 </div>
               </div>
