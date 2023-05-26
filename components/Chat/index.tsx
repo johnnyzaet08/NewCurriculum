@@ -1,17 +1,52 @@
 "use client";
 
 import { useState } from 'react';
+import { Configuration, OpenAIApi } from "openai";
 import SingleMessage from './SingleMessage';
+import chatData from './chatData';
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
+  const configuration = new Configuration({
+    organization: process.env.NEXT_PUBLIC_OPENAI_API_ORGANIZATION,
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+  });
 
-  const handleClick = () => {
+  const openai = new OpenAIApi(configuration);
+
+  
+
+  async function handleClick() {
 
     setIsButtonDisabled(true);
+
+    const response_OpenAI = await openai.createCompletion({
+      model: "curie:ft-ceassistants:chatbot-webpage-ce-2023-05-25-03-12-18",
+      prompt: inputValue + '?\n\n###\n\n',
+      max_tokens: 10,
+      temperature: 0,
+    });
+
+    const response_OpenAI_data = response_OpenAI.data.choices[0].text;
+    let response_DataChat = '';
+
+    for (let i = 0; i < response_OpenAI_data.length; i++) {
+      if (response_OpenAI_data[i] === "$" || response_OpenAI_data[i] === "\n" || response_OpenAI_data[i] === "#") {
+      } else {
+        response_DataChat += response_OpenAI_data[i];
+      }
+    }
+
+    let answer = null;
+
+    chatData.map((data) => {
+      if(data.reference === response_DataChat){
+        answer = data.answer;
+      }
+    })
 
     const message = {
       from: "user",
@@ -20,7 +55,7 @@ const Chat = () => {
 
     const response = {
       from: "OpenAI",
-      text: "aqui va la respuesta",
+      text: answer,
     }
 
     setMessages([...messages, message, response]);
@@ -36,7 +71,7 @@ const Chat = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="justify-center w-full px-4 lg:w-7/12 xl:w-full">
             <div
-              className="wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
+              className="wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px] h-screen"
               data-wow-delay=".15s
               "
             >
@@ -44,11 +79,12 @@ const Chat = () => {
                 Chat
               </h2>
               <div className="mb-5 ml-3">
-                Disclaimer
+              Este chat es generado por una Inteligencia Artificial y, por lo tanto, las respuestas proporcionadas pueden no ser completamente precisas o exactas. 
+              En caso de que las respuestas no sean satisfactorias o necesite asistencia adicional, le recomendamos encarecidamente que se ponga en contacto directamente con nosotros utilizando la sección de contacto que se encuentra a continuación.
               </div>
               
-              <div className="w-full h-[500px] overflow-y-auto resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp">
-                <div className="w-full flex-rows resize-none justify-center">
+              <div className="w-full h-[80%] overflow-y-auto resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp">
+                <div className="w-full flex-rows resize-none justify-center mt-5">
                   {messages.map((message, index) => (
                     <div
                       key={index}
