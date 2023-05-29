@@ -73,6 +73,10 @@ const Footer = () => {
               </div>
             </div>
 
+            <div>
+                <div className="text-gray-900 text-sm mr-4 py-4 flex justify-center md:block text-black dark:text-white" >&copy; All rights reserved.</div>
+            </div>
+
             <div className="w-full ml-auto px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">

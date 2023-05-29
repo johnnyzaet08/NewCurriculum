@@ -74,7 +74,7 @@ const featuresData: Feature[] = [
     ),
     title: "Diseño Lógico",
     paragraph:
-      "Absorbido por MA1403 Matemática Discreta, Fundamentos de Sistemas Computacionales, Fundamentos de Arquitectura de Computadores",
+      "Implementado en MA1403 Matemática Discreta, Fundamentos de Sistemas Computacionales, Fundamentos de Arquitectura de Computadores",
   },
   {
     id: 6,
@@ -89,7 +89,7 @@ const featuresData: Feature[] = [
     ),
     title: "Señales y Sistemas",
     paragraph:
-      "Absorbido por Análisis de Señales Mixtas, Taller de Señales Mixtas y Sistemas Empotrados",
+      "Implementado en Análisis de Señales Mixtas, Taller de Señales Mixtas y Sistemas Empotrados",
   },
   {
     id: 7,
@@ -119,7 +119,7 @@ const featuresData: Feature[] = [
     ),
     title: "Laboratorio de Elementos Activos",
     paragraph:
-      "Absorbido Taller de Señales Mixtas",
+      "Implementado en Taller de Señales Mixtas",
   },
   {
     id: 9,
@@ -149,7 +149,7 @@ const featuresData: Feature[] = [
     ),
     title: "Diseño de Sistemas Digitales",
     paragraph:
-      "Absorbido por Fundamentos de Arquitectura de Computadores, Taller de Diseño Digital y Arquitectura de Computadores",
+      "Implementado en Fundamentos de Arquitectura de Computadores, Taller de Diseño Digital y Arquitectura de Computadores",
   },
   {
     id: 11,
@@ -164,7 +164,7 @@ const featuresData: Feature[] = [
     ),
     title: "Taller de Diseño Analógico",
     paragraph:
-      "Absorbido por Taller de Señales Mixtas",
+      "Implementado en por Taller de Señales Mixtas",
   },
   {
     id: 12,

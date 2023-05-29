@@ -1,4 +1,26 @@
+"use client";
+
+import React, {useState} from "react";
+import sendEmail from "./sendEmail";
+
+
 const Contact = () => {
+
+  const [nombre, setNombre] = useState('');
+  const [email, setEmail] = useState('');
+  const [consulta, setConsulta] = useState('');
+
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    // Valid form, continue with form submission
+
+    let asunto = "Consulta - " + nombre;
+    let texto = "Nombre: " + nombre + "\nEmail: " + email + "\n\nConsulta: " + consulta;
+
+    sendEmail(texto, asunto);
+  };
+
   return (
     <section id="contact" className="overflow-hidden mb-[15vh]">
       <div className="container">
@@ -28,7 +50,7 @@ const Contact = () => {
                 </a>
                 para obtener el contacto y comunicarse con ellos directamente.
               </p>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">
                   <div className="w-full px-4 md:w-1/2">
                     <div className="mb-8">
@@ -39,9 +61,12 @@ const Contact = () => {
                         Nombre
                       </label>
                       <input
-                        type="text"
+                        id="name_in"
+                        type="name"
                         placeholder="Introduce tu nombre"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                        onChange={(e) => setNombre(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -54,9 +79,12 @@ const Contact = () => {
                         Email
                       </label>
                       <input
+                        id="email_in"
                         type="email"
                         placeholder="Introduce tu correo electrónico"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -69,15 +97,17 @@ const Contact = () => {
                         Tu consulta
                       </label>
                       <textarea
+                        id="message_in"
                         name="message"
                         rows={5}
                         placeholder="Introduce la consulta"
                         className="w-full resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                        onChange={(e) => setConsulta(e.target.value)}
                       ></textarea>
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 hover:shadow-signUp">
+                    <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80" type='submit'>
                       Enviar
                     </button>
                   </div>
