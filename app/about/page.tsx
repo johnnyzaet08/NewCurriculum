@@ -1,4 +1,5 @@
 import NewCurriculum from "@/components/NewCurriculum";
+import ConvalidationTable from "@/components/ConvalidationsTable";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 const AboutPage = () => {
@@ -9,6 +10,9 @@ const AboutPage = () => {
         description="Acá podrá encontrar todo lo relacionado a la nueva malla curricular. Desde el plan curricular completo hasta sus respectiva tabla de convalidaciones"
       />
       <NewCurriculum />
+
+      <ConvalidationTable />
+
     </>
   );
 };

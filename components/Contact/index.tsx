@@ -1,24 +1,66 @@
 "use client";
 
 import React, {useState} from "react";
-import sendEmail from "./sendEmail";
 
-
-const Contact = () => {
-
+const Contact: React.FC = () => {
+  
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [consulta, setConsulta] = useState('');
+  const [disabledB, setDisabledB] = useState(false);
 
+  function disableButtom () {
+    setDisabledB(true);
+  }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  function enableButtom () {
+    setDisabledB(false);
+  }
+
+  function clearAll () {
+    setNombre('');
+    setEmail('');
+    setConsulta('');
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Valid form, continue with form submission
+
+    disableButtom();
 
     let asunto = "Consulta - " + nombre;
     let texto = "Nombre: " + nombre + "\nEmail: " + email + "\n\nConsulta: " + consulta;
 
-    sendEmail(texto, asunto);
+    const html = `
+      <h1> Nombre: ${nombre} </h1>
+      <h2> Email: ${email} </p>
+      <p> Consulta: ${consulta} </p>
+      `
+
+    //sendEmailAux(texto, asunto);
+
+    try {
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ asunto, texto, html }),
+      });
+
+      if (response.ok) {
+        alert('El correo ha sido enviado correctamente');
+        clearAll();
+      } else {
+        alert('Error sending email');
+      }
+
+      enableButtom();
+
+    } catch (error) {
+      alert('Network error: ' + error);
+      enableButtom();
+    }
   };
 
   return (
@@ -65,8 +107,9 @@ const Contact = () => {
                         type="name"
                         placeholder="Introduce tu nombre"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                        onChange={(e) => setNombre(e.target.value)}
                         required
+                        onChange={(e) => setNombre(e.target.value)}
+                        value={nombre}
                       />
                     </div>
                   </div>
@@ -83,8 +126,9 @@ const Contact = () => {
                         type="email"
                         placeholder="Introduce tu correo electrónico"
                         className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
-                        onChange={(e) => setEmail(e.target.value)}
                         required
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
                       />
                     </div>
                   </div>
@@ -103,11 +147,16 @@ const Contact = () => {
                         placeholder="Introduce la consulta"
                         className="w-full resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                         onChange={(e) => setConsulta(e.target.value)}
+                        value={consulta}
                       ></textarea>
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80" type='submit'>
+                    <button
+                      className={`rounded-md bg-primary py-4 px-9 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-80 `}
+                      style={{ opacity: disabledB ? 0.5 : 1, cursor: disabledB ? 'not-allowed' : 'pointer' }}
+                      type='submit'
+                    >
                       Enviar
                     </button>
                   </div>
