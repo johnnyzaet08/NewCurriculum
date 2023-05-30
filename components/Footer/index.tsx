@@ -19,6 +19,7 @@ const Footer = () => {
                 <div className="flex ml-[18%] items-center">
                   <a
                     href="https://github.com/johnnyzaet08"
+                    rel="noreferrer"
                     target="_blank"
                     aria-label="social-link"
                     className="mr-6 text-[#CED3F6] hover:text-primary"
@@ -34,6 +35,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="https://www.instagram.com/johnny_zaet08/"
+                    rel="noreferrer"
                     target="_blank"
                     aria-label="social-link"
                     className="mr-6 text-[#CED3F6] hover:text-primary"
@@ -49,6 +51,7 @@ const Footer = () => {
                   </a>
                   <a
                     href="https://www.linkedin.com/in/johnnyzaet08/"
+                    rel="noreferrer"
                     target="_blank"
                     aria-label="social-link"
                     className="mr-6 text-[#CED3F6] hover:text-primary"
