@@ -9,7 +9,7 @@ const Testimonials = () => {
       <div className="container">
         <SectionTitle
           title="Diferentes opiniones de nuestros estudiantes"
-          paragraph="Las opiniones son resumidas y seleccionadas de todas las que tenemos"
+          paragraph="Las opiniones son resumidas y seleccionadas de todas las todas las opiniones estudiantiles, acá se muestra un pequeño porcentaje de todas las recibidas en su momento. "
           center
         />
 
