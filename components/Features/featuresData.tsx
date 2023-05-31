@@ -74,7 +74,7 @@ const featuresData: Feature[] = [
     ),
     title: "Diseño Lógico",
     paragraph:
-      "Implementado en MA1403 Matemática Discreta, Fundamentos de Sistemas Computacionales, Fundamentos de Arquitectura de Computadores",
+      "Eliminado",
   },
   {
     id: 6,
@@ -89,7 +89,7 @@ const featuresData: Feature[] = [
     ),
     title: "Señales y Sistemas",
     paragraph:
-      "Implementado en Análisis de Señales Mixtas, Taller de Señales Mixtas y Sistemas Empotrados",
+      "Eliminado",
   },
   {
     id: 7,
@@ -104,7 +104,7 @@ const featuresData: Feature[] = [
     ),
     title: "Circuitos Discretos",
     paragraph:
-      "Integrado en Circuitos Analógicos",
+      "Eliminado",
   },
   {
     id: 8,
@@ -119,7 +119,7 @@ const featuresData: Feature[] = [
     ),
     title: "Laboratorio de Elementos Activos",
     paragraph:
-      "Implementado en Taller de Señales Mixtas",
+      "Eliminado",
   },
   {
     id: 9,
@@ -134,7 +134,7 @@ const featuresData: Feature[] = [
     ),
     title: "Circuitos Integrados Lineales",
     paragraph:
-      "Integrado en Circuitos Analógicos",
+      "Eliminado",
   },
   {
     id: 10,
@@ -149,7 +149,7 @@ const featuresData: Feature[] = [
     ),
     title: "Diseño de Sistemas Digitales",
     paragraph:
-      "Implementado en Fundamentos de Arquitectura de Computadores, Taller de Diseño Digital y Arquitectura de Computadores",
+      "Eliminado",
   },
   {
     id: 11,
@@ -164,7 +164,7 @@ const featuresData: Feature[] = [
     ),
     title: "Taller de Diseño Analógico",
     paragraph:
-      "Implementado en por Taller de Señales Mixtas",
+      "Eliminado",
   },
   {
     id: 12,
@@ -194,7 +194,7 @@ const featuresData: Feature[] = [
     ),
     title: "Principios de Modelado en Ingeniería",
     paragraph:
-      "Análisis de lo solicitado por IEEE/ACM para las carreras de computadores conjuntamente con lo requerido según nuestra realidad local",
+      "Agregado",
   },
   {
     id: 14,
@@ -209,7 +209,7 @@ const featuresData: Feature[] = [
     ),
     title: "Ingenieria Económica",
     paragraph:
-      "Adecuación de la malla curricular según el proceso de acreditación y los requerimientos que toda carrera debe tener dentro del ITCR bajo el compromiso de mejora",
+    "Agregado",
   },
   {
     id: 15,
@@ -239,7 +239,7 @@ const featuresData: Feature[] = [
     ),
     title: "Salud Ocupacional",
     paragraph:
-      "Adecuación de la malla curricular según el proceso de acreditación y los requerimientos que toda carrera debe tener dentro del ITCR bajo el compromiso de mejora",
+    "Agregado",
   },
   {
     id: 17,
@@ -254,7 +254,7 @@ const featuresData: Feature[] = [
     ),
     title: "Taller de Señales Mixtas",
     paragraph:
-      "Luego de un análisis del temario de varios cursos, se acordó en la creación",
+    "Agregado",
   },
   {
     id: 18,
@@ -269,7 +269,7 @@ const featuresData: Feature[] = [
     ),
     title: "Seguridad de la Información",
     paragraph:
-      "Adecuación de la malla curricular según el proceso de acreditación y los requerimientos que toda carrera debe tener dentro del ITCR bajo el compromiso de mejora",
+    "Agregado",
   },
   {
     id: 19,
@@ -284,7 +284,7 @@ const featuresData: Feature[] = [
     ),
     title: "Fundamentos de Arquitectura",
     paragraph:
-      "Análisis de lo solicitado por IEEE/ACM para las carreras de computadores conjuntamente con lo requerido según nuestra realidad loca",
+    "Agregado",
   },
   {
     id: 20,
@@ -299,7 +299,7 @@ const featuresData: Feature[] = [
     ),
     title: "Análisis de Señales Mixtas",
     paragraph:
-      "Luego de un análisis del temario de varios cursos, se acordó en la creación",
+    "Agregado",
   },
   {
     id: 21,
@@ -314,7 +314,7 @@ const featuresData: Feature[] = [
     ),
     title: "Circuitos Analógicos",
     paragraph:
-      "Luego de un análisis del temario de varios cursos, se acordó en la creación",
+    "Agregado",
   },
   {
     id: 22,
@@ -704,7 +704,7 @@ const featuresData: Feature[] = [
     ),
     title: "Probabilidad y Estadística",
     paragraph:
-      "El contenido programático de este curso se estará cubriendo en el curso PI2610 Probabilidad y Estadística, cuyo enfoque favorece al perfil profesional de Ingeniería en Computadores, pues promueve un énfasis práctico de diversas industrias sobre el uso de estos conceptos. Esto promueve la multidisciplinariedad de Ingeniería en Computadores con otras carreras",
+      "El curso pasa de ser impartido por la Escuela de Electrónica a la Escuela de Producción Industrial",
   },
   {
     id: 48,
