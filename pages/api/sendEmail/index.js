@@ -8,6 +8,7 @@ const sendEmail = async (req, res) => {
       host: process.env.NEXT_PUBLIC_SMTP_HOST,
       port: process.env.NEXT_PUBLIC_SMTP_PORT,
       secure: false,
+      requireTLS: true,
       auth: {
         user: process.env.NEXT_PUBLIC_EMAILADRESS,
         pass: process.env.NEXT_PUBLIC_EMAILPASSWORD,

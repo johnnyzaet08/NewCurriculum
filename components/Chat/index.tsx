@@ -69,22 +69,22 @@ const Chat = () => {
       
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
-          <div className="justify-center w-full px-4 lg:w-7/12 xl:w-full">
+          <div className="justify-center w-full px-4 xl:w-full">
             <div
-              className="wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px] h-screen"
+              className="h-auto wow fadeInUp mb-12 rounded-md bg-primary/[3%] py-11 px-8 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px] h-screen"
               data-wow-delay=".15s
               "
             >
               <h2 className="mb-2 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
                 Chat
               </h2>
-              <div className="mb-5 ml-3">
-              Este chat es generado por una Inteligencia Artificial y, por lo tanto, las respuestas proporcionadas pueden no ser completamente precisas o exactas. 
-              En caso de que las respuestas no sean satisfactorias o necesite asistencia adicional, le recomendamos encarecidamente que se ponga en contacto directamente con nosotros utilizando la sección de contacto que se encuentra a continuación.
+              <div className="mb-5 ml-3 max-h-[250px] overflow-x-hidden">
+              Este chat es generado por una Inteligencia Artificial y, por lo tanto, las respuestas proporcionadas pueden no ser precisas o exactas. 
+              En caso de no solucionar su consulta o necesite asistencia adicional, le recomendamos que se ponga en contacto directamente con nosotros utilizando la sección de contacto que se encuentra a continuación.
               </div>
               
-              <div className="w-full h-[80%] overflow-y-auto resize-none rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp">
-                <div className="w-full flex-rows resize-none justify-center mt-5">
+              <div className="w-full h-[60%] sm:h-[70%] lg:h-[80%] rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp">
+                <div className="w-full flex-rows justify-center mt-5">
                   {messages.map((message, index) => (
                     <div
                       key={index}
