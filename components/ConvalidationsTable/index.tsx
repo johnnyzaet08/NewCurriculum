@@ -1,21 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
+import convalidationData from "./convalidationData";
 
 const ConvalidationTable = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const imageUrl = "/images/image/InProgress.gif"
-
-  const handleOpenModal = () => {
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
-  };
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
@@ -26,37 +15,69 @@ const ConvalidationTable = () => {
           center
           mb="80px"
         />
-
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div
-              className="wow fadeInUp mx-auto max-w-[770px] overflow-hidden rounded-md"
-              data-wow-delay=".15s"
-            >
-              
-              <div className="relative aspect-[77/40] items-center justify-center">
-                <div className="relative top-0 right-0 flex h-full w-full items-center justify-center">
-                  <button
-                    className="relative h-full w-full items-center justify-center rounded-full bg-opacity-100 text-primary transition hover:bg-opacity-0"
-                  >
-                    <Image src={imageUrl} alt="Modal Image" fill 
-                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-                  </button>
+        <section className="py-2 lg:p-[10px]">
+          <div className="container mx-auto">
+            <div className="-mx-4 flex flex-wrap">
+              <div className="w-full px-4">
+                <div className="max-w-full overflow-x-auto">
+                  <table className="w-full table-auto">
+                    <thead>
+                      <tr className="bg-gray-300 dark:bg-primary text-center">
+                        <th
+                          className="w-1/8 min-w-[20px] border-t border-r border-l border-gray-300 py-4 px-3 text-lg font-semibold lg:py-7 lg:px-4 dark:text-white text-gray-900"
+                        >
+                          Sem.
+                        </th>
+                        <th
+                          className="w-3/8 min-w-[60px] border-t border-r border-gray-300 py-4 px-3 text-lg font-semibold lg:py-7 lg:px-4 dark:text-white text-gray-900"
+                        >
+                          Curso Aprobado
+                        </th>
+                        <th
+                          className="w-1/8 min-w-[20px] border-t border-r border-gray-300 py-4 px-3 text-lg font-semibold lg:py-7 lg:px-4 dark:text-white text-gray-900"
+                          >
+                          Sem.
+                        </th>
+                        <th
+                          className="w-3/8 min-w-[60px] border-t border-r border-l border-gray-300 py-4 px-3 text-lg font-semibold lg:py-7 lg:px-4 dark:text-white text-gray-900"
+                        >
+                          Cursos Convalidado
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      { convalidationData.map( (convalidation) => (
+                        <tr key={convalidation.id}>
+                          <td
+                            className="text-dark dark:text-white border-b border-r border-l border-gray-300 dark:bg-dark bg-white py-5 px-2 text-center text-base font-medium"
+                          >
+                            {convalidation.Sem_1}
+                          </td>
+                          <td
+                            className="text-dark dark:text-white border-b border-r border-gray-300 dark:bg-dark bg-white py-5 px-2 text-center text-base font-medium"
+                          >
+                            {convalidation.Curso_1}
+                          </td>
+                          <td
+                            className="text-dark dark:text-white border-b border-r border-gray-300 dark:bg-dark bg-white py-5 px-2 text-center text-base font-medium"
+                          >
+                            {convalidation.Sem_2}
+                          </td>
+                          <td
+                            className="text-dark dark:text-white border-b border-r border-gray-300 dark:bg-dark bg-white py-5 px-2 text-center text-base font-medium"
+                          >
+                            {convalidation.Curso_2}
+                          </td>
+                        </tr>
+                      )) }
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
-              {modalOpen && (
-                <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-40">
-                  <div className="absolute top-0 left-0 w-full h-full bg-opacity-100" onClick={handleCloseModal} />
-                  <img src={imageUrl} alt={"Modal Image"} className="max-w-full max-h-full rounded-5 shadow-md" />
-                </div>
-              )}
-              
             </div>
           </div>
-        </div>
+        </section>
       </div>
-
     </section>
   );
 };

@@ -170,7 +170,7 @@ const course20: Course = {
   id: 20,
   code: "CE2103",
   name: "Algoritmos y estructuras de datos II",
-  credits: 2,
+  credits: 4,
   equivalence: "none",
 };
 
@@ -244,7 +244,7 @@ const course29: Course = {
   id: 29,
   code: "FI2103",
   name: "Física general III",
-  credits: 0,
+  credits: 3,
   equivalence: "none",
 };
 
@@ -278,7 +278,7 @@ const course33: Course = {
   id: 33,
   code: "EL2206",
   name: "Laboratorio de elementos activos",
-  credits: 0,
+  credits: 1,
   equivalence: "none",
 };
 

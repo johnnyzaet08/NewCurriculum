@@ -14,7 +14,7 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-12 text-2xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight md:text-4xl md:leading-tight">
-                  Propuesta para la actualización curricular plan 2100 Licenciatura Ingeniería en Computadores
+                  Actualización curricular plan 2100 Licenciatura Ingeniería en Computadores
                 </h1>
                 <p className="mb-12 text-base font-medium !leading-relaxed text-body-color dark:text-white dark:opacity-90 sm:text-lg md:text-xl">
                   El Tecnológico de Costa Rica en su misión de contribuir con la competitividad y desarrollo económico de Costa Rica, se ha comprometido con la propuesta de una oferta académica relevante y pertinente, que atienda a las necesidades de talento humano del sector socio productivo del país, como condición previa para el desarrollo económico. En virtud de lo anterior, el Área Académica Ingeniería en Computadores propone una actualización del plan de estudio, la cual satisface las necesidades vigentes en el mercado actual tanto nacional como internacional. Esta actualización responde a la revisión permanente y análisis crítico, considerando lo que ha ocurrido en su implementación durante los diez años de vigencia del plan actual, como también los cambios en las distintas fuentes que nutren el proceso de revisión.

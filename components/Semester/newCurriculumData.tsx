@@ -12,7 +12,7 @@ const course1: Course = {
   id: 1,
   code: "MA0101",
   name: "Matemática general",
-  credits: 4,
+  credits: 2,
   equivalence: "MA0101",
 };
 
@@ -446,7 +446,7 @@ const course52: Course = {
   id: 52,
   code: "CE5302",
   name: "Proyecto de aplicación de la ingeniería en computadores",
-  credits: 3,
+  credits: 4,
   equivalence: "CE5302",
 };
 
@@ -493,7 +493,7 @@ const oldCurriculumData: Semester[] = [
   {
     id: 1,
     title: "Semestre 1",
-    courses: [course2,course3,course5,course6,course7,course8,course9],    
+    courses: [course2,course3,course4,course5,course6,course7,course8,course9],    
   },
   {
     id: 2,
